@@ -6,6 +6,12 @@ public class TreeNode {
 	private TreeNode leftChild;
 	private TreeNode rightChild;
 	
+
+//	TreeNode constructor for object initialization.	
+	
+	public TreeNode(int data) { this.data = data; }
+	
+//	node insertion method	
 	
 	public void insert(int value) {
 		if (value == data) {
@@ -30,6 +36,8 @@ public class TreeNode {
 		}
 	}
 	
+// in-order traversal method	
+	
 	public void traverseInOrder() {
 		// visit leftChild, root, rightChild
 		if (leftChild != null) {
@@ -41,28 +49,19 @@ public class TreeNode {
 		}
 	}
 	
-	public TreeNode(int data) {
-		this.data = data;
-	}
+//	getters and setters for the Node.
 	
-	public int getData() {
-		return data;
-	}
-	public void setData(int data) {
-		this.data = data;
-	}
-	public TreeNode getLeftChild() {
-		return leftChild;
-	}
-	public void setLeftChild(TreeNode leftChild) {
-		this.leftChild = leftChild;
-	}
-	public TreeNode getRightChild() {
-		return rightChild;
-	}
-	public void setRightChild(TreeNode rightChild) {
-		this.rightChild = rightChild;
-	}
+	public int getData() { return data; }
+	
+	public void setData(int data) { this.data = data; }
+	
+	public TreeNode getLeftChild() { return leftChild; }
+	
+	public void setLeftChild(TreeNode leftChild) { this.leftChild = leftChild; }
+	
+	public TreeNode getRightChild() { return rightChild; }
+	
+	public void setRightChild(TreeNode rightChild) { this.rightChild = rightChild; }
 	
 	
 }
