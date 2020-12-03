@@ -1,48 +1,18 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
-import listsExercices.Employee;
+import searchAlgorithms.BinarySearch;
 
 public class Main {
 
 	public static void main(String[] args) {
 			
+		int[] intArray = { -22, -15, 1, 7, 20, 35, 55 };
 		
-		LinkedList<Employee> employees = new LinkedList<>();
-		employees.add(new Employee("Jane", "Jones", 123));
-		employees.add(new Employee("John", "Doe", 5678));
-		employees.add(new Employee("Mike", "Wilson", 45));
-		employees.add(new Employee("Mary", "Smith", 5555));
-		employees.add(new Employee("John", "Doe", 5678));
-		employees.add(new Employee("Bill", "End", 3948));
-		employees.add(new Employee("Jane", "Jones", 123));
+		BinarySearch search = new BinarySearch();
+		
+		System.out.println(search.iterativeBinarySearch(intArray, -15));
+		System.out.println(search.iterativeBinarySearch(intArray, 35));
 		
 		
-		employees.forEach(e -> System.out.println(e));
-		
-		HashMap<Integer, Employee> employeeTable = new HashMap<>();
-		ListIterator<Employee> iterator = employees.listIterator();
-		List<Employee> remove = new ArrayList<>();
-		
-		while (iterator.hasNext()) {
-			Employee employee = iterator.next();
-			if (employeeTable.containsKey(employee.getId())) {
-				remove.add(employee);
-			}
-			else {
-				employeeTable.put(employee.getId(), employee);
-			}
-		}
-		
-		for (Employee employee: remove) {
-			employees.remove(employee);
-		}
-		System.out.println("------------------------");
-		employees.forEach(e -> System.out.println(e));
-	}
-			
+	}			
 }
 
 
