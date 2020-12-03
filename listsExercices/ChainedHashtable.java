@@ -7,6 +7,7 @@ public class ChainedHashtable {
 
 	private LinkedList<StoredEmployee>[] hashtable;
 	
+	@SuppressWarnings("unchecked")
 	public ChainedHashtable() {
 		hashtable = new LinkedList[10];
 		for (int i = 0; i < hashtable.length; i++) {
