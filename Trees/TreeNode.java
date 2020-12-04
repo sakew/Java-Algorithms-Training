@@ -85,15 +85,59 @@ public class TreeNode {
 	}
 	
 	public void traverseInOrder() {
-		// visit leftChild, root, rightChild
+//		for inOrder traversal we visit leftChild, root, rightChild
+
+//		leftChild
+		
 		if (leftChild != null) {
 			leftChild.traverseInOrder();
 		}
+		
+//		root
+		
 		System.out.print(data + ", ");
+
+//		rightChild
+		
 		if (rightChild != null) {
 			rightChild.traverseInOrder();
 		}
 	}
+	
+//		for PreOrder traversal we visit the root, leftChild, rightChild	
+	public void traversePreOrder() {
+
+// 		this is the root
+		
+		System.out.print(data + ", ");
+
+//		this is the leftChild
+		
+		if (leftChild != null) {
+			leftChild.traversePreOrder();
+		}
+
+//		this is the rightChild		
+		
+		if (rightChild != null) {
+			rightChild.traversePreOrder();
+		}
+	}
+	
+//		for PostOrder traversal we visit the leftChild, rightChild, root	
+	
+	public void traversePostOrder() {		
+		
+		if (leftChild != null) {
+			leftChild.traversePostOrder();
+		}
+		
+		if (rightChild != null) {
+			rightChild.traversePostOrder();
+		}
+		System.out.print(data + ", ");
+	}
+	
 	
 //	getters and setters for the Node.
 	

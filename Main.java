@@ -16,30 +16,30 @@ public class Main {
 		intTree.insert(29);
 		intTree.insert(26);
 		intTree.insert(22);
-		intTree.insert(32);
-		
-//		Checking if everything works accordingly by inserting a new value in the tree.
-		
+		intTree.insert(32);		
 		intTree.insert(17);
-		System.out.println("Before Deletion.");
-		intTree.traverseInOrder();
-		System.out.println();
-//		
-//		System.out.println(intTree.get(27));
-//		System.out.println(intTree.get(17));
-//		System.out.println(intTree.get(9));
 		
-//		System.out.println(intTree.min());
-//		System.out.println(intTree.max());
 		
-		intTree.delete(25);
-		System.out.println("After Deletion.");
+//		traverse InOrder		
+		
+		System.out.println("InOrder traversal -->");
+		
 		intTree.traverseInOrder();
 		System.out.println();
 		
-//		intTree.delete(27);
-//		intTree.delete(25);
+//		traverse PreOrder		
 	
+		System.out.println("PreOrder traversal -->");
+		
+		intTree.traversePreOrder();
+		System.out.println();
+		
+//		traverse PostOrder	
+		
+		System.out.println("PostOrder traversal -->");
+		
+		intTree.traversePostOrder();
+		System.out.println();
 	}			
 }
 
