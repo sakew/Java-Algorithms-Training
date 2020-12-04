@@ -61,6 +61,18 @@ public class Tree {
 			else if (subtreeRoot.getRightChild() == null) {
 				return subtreeRoot.getLeftChild();
 			}
+			
+//		deleting a node with two children.
+			
+//		we replace the value of the node with the smallest value from the right subtree			
+//		this is when trying to move the left part of the subtree by taking the minimum value found.
+			
+			subtreeRoot.setData(subtreeRoot.getRightChild().min());
+			
+//		delete the node with the smallest value in the right subtree			
+			
+			subtreeRoot.setRightChild(delete(subtreeRoot.getRightChild(), subtreeRoot.getData()));
+			
 		}
 //		return the subtreeRoot with the new values set after the operations are done.
 		
