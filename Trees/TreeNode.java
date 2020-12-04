@@ -61,8 +61,7 @@ public class TreeNode {
 // if we didn't find the value we were looking for return null.		
 		return null;
 	}
-	
-// in-order traversal method	
+		
 	
 	public int min() {
 // we traverse the entire left side to reach the outermost leaf with the smallest value.
