@@ -18,8 +18,21 @@ public class Main {
 		intTree.insert(22);
 		intTree.insert(32);
 		
-		intTree.traverseInOrder();
+//		Checking if everything works accordingly by inserting a new value in the tree.
 		
+		intTree.insert(17);
+		
+//		intTree.traverseInOrder();
+//		
+//		System.out.println();
+//		
+//		System.out.println(intTree.get(27));
+//		System.out.println(intTree.get(17));
+//		System.out.println(intTree.get(9));
+		
+		System.out.println(intTree.min());
+		System.out.println(intTree.max());
+	
 	}			
 }
 
