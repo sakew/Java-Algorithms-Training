@@ -84,6 +84,58 @@ public class Heap {
 		return deletedValue;
 	}
 	
+	
+//	Notes:
+//	- the root has the largest value
+//	- swap root with last element in the array
+//	- heapify the tree excluding the last node.
+//	- after heapifying the tree second largest element becomes the root.
+//	- repeat the process until heap tree is sorted.
+
+//	Implementation of HeapSort algorithm step by step:	
+
+//	step 1: swap root with last index
+//	step 2: heapify the tree ignoring the last node. 
+//			- 	reduce the size of the array after each heapify
+//			-	from and array of 8 elements we reduce it to 7 and repeat the process.
+
+//	step 3: repeat step 1 and 2 until it is sorted.
+	
+	
+	public void heapSort() {
+		
+//		taking the last index for the swap operation (swap with root)
+		
+		int lastHeapIndex = size - 1;		
+		for (int i = 0; i < lastHeapIndex; i++) {
+
+// 		store the largest value (root) in temporary variable.			
+			int tmp = heap[0];
+				
+//		finding location of the last item in the heap.
+			
+			heap[0] = heap[lastHeapIndex - i];
+
+	
+//		store the last item in place of the root.
+			
+			heap[lastHeapIndex - i] = tmp;
+			
+// 		printing the last item for each operation on the array.			
+			System.out.println("Current last item: " + tmp
+					+ " Current root: " + heap[i]);
+			System.out.println();
+			
+			
+//		heapify the tree.
+		fixHeapBelow(0, lastHeapIndex - i - 1);	
+			
+		
+		
+		}
+	}
+	
+	
 	private void fixHeapAbove(int index) {
 		int newValue = heap[index];
 		
