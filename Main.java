@@ -15,15 +15,16 @@ public class Main {
 		heap.insert(40);
 		heap.insert(52);
 		heap.insert(67);
-		System.out.println("Before deletion: ");
-		heap.printHeap();
+//		System.out.println("Before deletion: ");
+//		heap.printHeap();
+//		
+//		heap.delete(0);
+//		
+//		System.out.println("After deletion: ");
+//		
+//		heap.printHeap();
 		
-		heap.delete(0);
-		
-		System.out.println("After deletion: ");
-		
-		heap.printHeap();
-		
+		System.out.println(heap.peek());
 
 	}			
 }

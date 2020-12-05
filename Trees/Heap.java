@@ -54,6 +54,13 @@ public class Heap {
 		
 	}
 	
+	public int peek() {
+		if (isEmpty()) {
+			throw new IndexOutOfBoundsException("Heap is Empty");
+		}
+		return heap[0];
+	}
+	
 	public int delete (int index) {
 		if (isEmpty()) {
 			throw new IndexOutOfBoundsException("Heap is emtpy");
