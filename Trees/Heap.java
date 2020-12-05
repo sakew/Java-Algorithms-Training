@@ -54,6 +54,29 @@ public class Heap {
 		
 	}
 	
+	public int delete (int index) {
+		if (isEmpty()) {
+			throw new IndexOutOfBoundsException("Heap is emtpy");
+		}
+		
+		int parent = getParent(index);
+		int deletedValue = heap[index];
+		
+		
+		heap[index] = heap[size-1];
+		
+		if (index == 0 || heap[index] < heap[parent]) {
+			fixHeapBelow(index, size - 1);
+		}
+		else {
+			fixHeapAbove(index);
+		}
+		
+		size--;
+		
+		return deletedValue;
+	}
+	
 	private void fixHeapAbove(int index) {
 		int newValue = heap[index];
 		
@@ -68,17 +91,58 @@ public class Heap {
 		heap[index] = newValue;
 	}
 	
-	
-	public boolean isFull() {
-		return size == heap.length;
-	}
-	
-	public int getParent(int index) {
-	
-//		no need to floor it because integers are automatically floored.		
+	private void fixHeapBelow(int index, int lastHeapIndex) {
+		int childToSwap;
 		
-		return (index - 1) / 2;
+		while(index <= lastHeapIndex) {
+			int leftChild = getChild(index, true);
+			int rightChild = getChild(index, false);
+			
+			if(leftChild <= lastHeapIndex) {
+				if (rightChild > lastHeapIndex) {
+					childToSwap = leftChild;
+				}
+				else {
+//				assigning the index of the child that has the greatest value to childToSwap variable -> 
+//				if heap[leftChild] is greater than heap[rigthChild] assign leftChild to childToSwap else
+//				assign rightChild to childToSwap.
+					
+					childToSwap = (heap[leftChild] > heap[rightChild] ? leftChild : rightChild);
+				}
+				if (heap[index] < heap[childToSwap]) {
+					
+//					basic swapping of two values.
+					int tmp = heap[index];
+					heap[index] = heap[childToSwap];
+					heap[childToSwap] = tmp;
+					
+			}
+				else {
+					break;
+				}
+				index = childToSwap;
+		}
+			else {
+				break;
+			}
 	}
+}
+	
+	public void printHeap() {
+		for (int i = 0; i < size; i++) {
+			System.out.print(heap[i]);
+			System.out.print(", ");
+		}
+		System.out.println();
+	}
+	
+	public boolean isFull() { return size == heap.length; }
+	
+	public int getParent(int index) { return (index - 1) / 2; }
+	
+	public boolean isEmpty() { return size == 0; }
+	
+	public int getChild(int index, boolean left) { return 2 * index + (left ? 1 : 2); }
 	
 	
 }
